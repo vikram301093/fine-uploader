@@ -15,6 +15,8 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
+- script: firefox --version 
+
 - script: |
     npm install
     make build
