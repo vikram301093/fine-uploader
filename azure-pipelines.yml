@@ -15,10 +15,14 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: firefox --version 
-
 - script: |
     npm install
+  displayName: 'npm install'
+
+- script: |
     make build
+  displayName: 'make build'
+
+- script: |
     npm test
-  displayName: 'npm install and build'
+  displayName: 'npm test'
