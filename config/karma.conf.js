@@ -5,7 +5,7 @@ module.exports = function(config, options) {
     "use strict";
 
     return config.set({
-        browsers: ["Firefox"],
+        browsers: ["FirefoxHeadless"],
         captureTimeout: 60000,
         files: [
             path.resolve("_build/all.fine-uploader.js"),
@@ -28,6 +28,17 @@ module.exports = function(config, options) {
         logColors: true,
         frameworks: ["mocha"],
         reporters: ["spec"],
-        singleRun: true
+        singleRun: true,
+        customLaunchers: {
+            'FirefoxHeadless': {
+                base: 'Firefox',
+                flags: [
+                    '-headless',
+                ],
+                prefs: {
+                    'network.proxy.type': 0
+                }
+            }
+        }
     });
 };
