@@ -29,7 +29,7 @@ module.exports = function(config, options) {
         frameworks: ["mocha"],
         reporters: ["progress","html"],
         htmlReporter: {
-            outputFile: '../test_reports/units.html',
+            outputFile: 'test_reports/units.html',
                   
             // Optional
             pageTitle: 'Unit Tests',
