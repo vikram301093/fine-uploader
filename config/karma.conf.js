@@ -27,7 +27,18 @@ module.exports = function(config, options) {
         logLevel: config.LOG_INFO,
         logColors: true,
         frameworks: ["mocha"],
-        reporters: ["spec"],
+        reporters: ["progress","html"],
+        htmlReporter: {
+            outputFile: '../test_reports/units.html',
+                  
+            // Optional
+            pageTitle: 'Unit Tests',
+            subPageTitle: 'Fine Uploader',
+            groupSuites: true,
+            useCompactStyle: true,
+            useLegacyStyle: true,
+            showOnlyFailed: false
+        },
         singleRun: true,
         customLaunchers: {
             'FirefoxHeadless': {
