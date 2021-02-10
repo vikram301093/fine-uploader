@@ -29,7 +29,7 @@ steps:
   
 - task: CopyFiles@2
   inputs:
-    Contents: 'config/test_reports/**'
+    Contents: 'test_reports/**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
   displayName: 'Copy Test Report'
   
