@@ -26,3 +26,15 @@ steps:
 - script: |
     npm test
   displayName: 'npm test'
+  
+- task: CopyFiles@2
+  inputs:
+    Contents: 'config/test_reports/**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy Test Report'
+  
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'test_reports'
+  displayName: 'Publish Test Report'
